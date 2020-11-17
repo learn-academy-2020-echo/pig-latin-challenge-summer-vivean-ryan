@@ -31,14 +31,33 @@ class App extends Component {
         return vowel === "a" || vowel === "e" || vowel === "i" || vowel === "o" || vowel === "u"
       })
       console.log("vowelsArray:", vowelsArray)
+      let firstVowel = vowelsArray[0]
+      console.log("firstVowel", firstVowel);
+      let vowelLocation = currentWord.indexOf(firstVowel)
+      console.log("voweLocation", vowelLocation);
 
-let testerWord = "yummy"
-      let pigLatinWord = (currentWord) => {
-      if (currentWord.indexOf(0) === "y") {
-        return `${currentWord.substring(1)}yay`
-    }
-  }
-    console.log("tester for pigLatinWord: " + pigLatinWord(testerWord))
+
+      let testerWord = "Apple"
+      //let pigLatinWord = () => {
+        //Our first IF returns Every word that starts with a "y"
+        if (currentWord.charAt(0).toLowerCase() === "y") {
+          return `${currentWord.substring(1)}yay`
+        // this will return all the words that start a vowel and add "yay"
+      }else if(currentWord.charAt(0).toLowerCase() === "q" && currentWord.charAt(1).toLowerCase() === "u"){
+          return `${currentWord.substring(2)}quay`
+      }else if(currentWord.charAt(1).toLowerCase() === "q" && currentWord.charAt(2).toLowerCase() === "u"){
+          return `${currentWord.substring(3)}${currentWord.charAt(0)}quay`
+      }else if(vowelLocation === 0){
+          return `${currentWord}way`
+      }else if(vowelLocation !== 0){
+        let firstHalf = currentWord.substring(0, vowelLocation)
+        console.log(firstHalf);
+        let secondHalf = currentWord.substring(vowelLocation)
+        console.log(secondHalf);
+          return `${secondHalf}${firstHalf}ay`
+      }
+//  console.log(pigLatinWord(testerWord));
+  //console.log("tester for pigLatinWord:", pigLatinWord(testerWord))
 
 
       //three basic situations: words that begin with consonants, words that begin with vowels, words that have qu in the first syllable
@@ -58,7 +77,15 @@ let testerWord = "yummy"
       return currentWord
     })
 
-
+    //now we need to get the words that start with one or more constants, move those beginning constants to the end of the word and add a "ay"
+        //  }
+          /* else{
+            for(i=0, i<currentWord.length, i++)  {
+              ["a", "i", "o", "u", "e"].indexOf(currentWord[i]) > -1
+            var firstCons = currentWord.slice(0,i)
+            var middleOfWord = currentWord.slice(i, currentWord.length)
+           return `${middleOfWord}${firstCons}ay`
+        */
     // joining the array back to a string of translated words
     // no need to change this variable
     let translatedWords = translatedWordsArray.join(" ")
@@ -74,7 +101,7 @@ let testerWord = "yummy"
     // this method restarts the game by setting the original state
     // ACTION ITEM: when you are ready for your full user experience, delete the test words in phrase so that is assigned an empty string
     this.setState({
-      phrase: "echo through yummy squeal queen fry",
+      phrase: "",
       phraseTranslated: "This is where your translated sentence will appear."
     })
   }
