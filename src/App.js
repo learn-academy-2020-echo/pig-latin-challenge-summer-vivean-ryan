@@ -31,7 +31,24 @@ class App extends Component {
         return vowel === "a" || vowel === "e" || vowel === "i" || vowel === "o" || vowel === "u"
       })
       console.log("vowelsArray:", vowelsArray)
-      
+
+let testerWord = "yummy"
+      let pigLatinWord = (currentWord) => {
+      if (currentWord.indexOf(0) === "y") {
+        return `${currentWord.substring(1)}yay`
+    }
+  }
+    console.log("tester for pigLatinWord: " + pigLatinWord(testerWord))
+
+
+      //three basic situations: words that begin with consonants, words that begin with vowels, words that have qu in the first syllable
+      //for words that begin with consonants, move all the consonants before the first vowel to the end of the word, & add -ay
+      //- For words beginning with a vowel, add "way" to the end.
+      //For words beginning with one or more consonants, move all of the first consecutive consonants to the end, and add "ay".
+      //If the first consonants include "qu", move the "u" along with the "q". Don't forget about words like "squeal" where "qu" doesn't come first!
+      //"y" is treated like a vowel in appropriate circumstances.
+      //if "y" is at the beginning of the word, it is usually a consonant
+      //if y is in the word, but a e i o and u are not in the word, y should be treated as a vowel
       // your code here!
 
       // Remember: console.log is your friend :)
