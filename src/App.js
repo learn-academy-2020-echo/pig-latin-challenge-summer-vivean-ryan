@@ -144,7 +144,7 @@ class App extends Component {
           <button onClick={ this.restartGame }>Clear</button>
         </div>
         <p>{ this.state.phraseTranslated }</p>
-        <footer>Coded by ~your name here~</footer>
+        <footer> By Vivean Ryan Summer </footer>
       </React.Fragment>
     )
   }
