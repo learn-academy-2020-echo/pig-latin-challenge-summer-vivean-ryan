@@ -125,7 +125,7 @@ class App extends Component {
       <React.Fragment>
         <h1>Pig Latin Translator</h1>
         <img
-          src="https://lh3.googleusercontent.com/QvvsRY5ShwDNEouVMK8_z7QCwS3grkgd4mzZOlom23Hurralk54ObvsyEMM8ZSNR5pEFBeBMzltzEEcgi2llYJnhXTuXClN3njmMjtw3vgn8Go5jr40fHMNzfI64eYRrnHbZUutxCA=w2400"
+          src="https://pngimg.com/uploads/pig/pig_PNG2191.png"
           alt="pig with butcher cut names in pig latin"
           id="butcherPig"
         />
